@@ -1,37 +1,28 @@
-import { ShuffleTheArray } from './shuffleTheArray.js';
-import { kidsWithCandies } from './kidsWithGreatestNumberOfCandies.js';
-import { defang } from './defangIP.js';
-import { steps20 } from './steps-2-0.js';
-import { jewelsAndStones } from './jewelsAndStones.js';
-import { numberSmallerThanGiven } from './numberSmallerThanGiven.js';
-import { decompressRunLengthEncodedList } from './decompressRunLengthEncodedList.js';
-import { subtractTheProductAndSumOfDigitsOfInterger } from './SubtractTheProductAndSumOfDigitsOfInterger.js'
-import { amountOfStringLengthOfNumbers } from './amountOfStringLengthOfNumbers.js';
-import createTargetInArray from './createTargetInArray.js';
-import splitStringsInArray from './splitStringsInArray.js';
+import group1 from './group1.js';
 import group2 from './group2.js';
 
 const shuffleTheArrayTest = () =>
-  arrayIsSame( [2,3,5,4,1,7], ShuffleTheArray(3, [2,5,1,3,4,7]) );
+  arrayIsSame( [2,3,5,4,1,7], group1.ShuffleTheArray(3, [2,5,1,3,4,7]) );
 const kidsWithCandiesTest = () =>
-  kidsWithCandies( [2,3,5,1,3], 3).some((bool) => bool)
-const defangTest = () => "1[.]1[.]1[.]1" === defang('1.1.1.1');
-const steps20Test = () => 4 === steps20(8);
-const jewelsAndStonesTest = () => 3 === jewelsAndStones("aA", "aAAbbbb");
+  group1.kidsWithCandies( [2,3,5,1,3], 3).some((bool) => bool)
+const defangTest = () => "1[.]1[.]1[.]1" === group1.defang('1.1.1.1');
+const steps20Test = () => 4 === group1.steps20(8);
+const jewelsAndStonesTest = () => 3 === group1.jewelsAndStones("aA", "aAAbbbb");
 const numberSmallerThanGivenTest = () =>
-  arrayIsSame( [4,0,1,1,3], numberSmallerThanGiven([8,1,2,2,3]) );
+  arrayIsSame( [4,0,1,1,3], group1.numberSmallerThanGiven([8,1,2,2,3]) );
 const decompressRunLengthEncodedListTest = () =>
-  arrayIsSame( [2,4,4,4], decompressRunLengthEncodedList([1,2,3,4]));
+  arrayIsSame( [2,4,4,4], group1.decompressRunLengthEncodedList([1,2,3,4]));
 const subtractTheProductAndSumOfDigitsOfIntergerTest = () =>
-  15 === subtractTheProductAndSumOfDigitsOfInterger(234)
+  15 === group1.subtractTheProductAndSumOfDigitsOfInterger(234)
 const amountOfStringLengthOfNumbersTest = () =>
-  1 === amountOfStringLengthOfNumbers([555,901,482,1771]);
+  1 === group1.amountOfStringLengthOfNumbers([555,901,482,1771]);
 const createTargetInArrayTest = () =>
   arrayIsSame(
     [0,4,1,3,2],
-    createTargetInArray([0,1,2,3,4], [0,1,2,2,1])
+    group1.createTargetInArray([0,1,2,3,4], [0,1,2,2,1])
   );
-const splitStringsInArrayTest = () => 4 === splitStringsInArray('RLRRLLRLRL');
+const splitStringsInArrayTest = () =>
+  4 === group1.splitStringsInArray('RLRRLLRLRL');
 const rangeSumOfBstTest = () =>
   32 === group2.rangeSumOfBst(
     {
@@ -49,23 +40,17 @@ const studentsDoingHomeworkAtAGivenTimeTest = () =>
   1 === group2.studentsDoingHomeworkAtAGivenTime( [1,2,3], [3,2,7], 4 );
 const minimumTimeVisitingAllPointsTest = () =>
   7 === group2.minimumTimeVisitingAllPoints([[1,1],[3,4],[-1,0]]);
-  
+
 const tests: Function[] = [
-  shuffleTheArrayTest,
-  kidsWithCandiesTest,
-  defangTest,
-  steps20Test,
-  jewelsAndStonesTest,
+  shuffleTheArrayTest, kidsWithCandiesTest,
+  defangTest, steps20Test, jewelsAndStonesTest,
   numberSmallerThanGivenTest,
   decompressRunLengthEncodedListTest,
   subtractTheProductAndSumOfDigitsOfIntergerTest,
   amountOfStringLengthOfNumbersTest,
-  createTargetInArrayTest,
-  splitStringsInArrayTest,
-  rangeSumOfBstTest,
-  maximumProductOfTwoElementsInArrayTest,
-  binaryToIntTest,
-  studentsDoingHomeworkAtAGivenTimeTest,
+  createTargetInArrayTest, splitStringsInArrayTest,
+  rangeSumOfBstTest, maximumProductOfTwoElementsInArrayTest,
+  binaryToIntTest, studentsDoingHomeworkAtAGivenTimeTest,
   minimumTimeVisitingAllPointsTest,
 ];
 
@@ -102,23 +87,3 @@ function arrayIsSame(arr1: any[], arr2: any[])  {
   }
   return true
 }
-
-
-
-/*
-const socket = new WebSocket('ws://localhost:3000');
-
-socket.addEventListener('message', function (event) {
-    console.log('reloading...');
-    resetBody();
-    runTests();
-});
-
-function resetBody() {
-  const s = document.createElement('script');
-  s.setAttribute('type', 'module');
-  s.setAttribute('src', './build/index.js');
-  document.body.innerHTML = '';
-  document.body.appendChild(s);
-}
-*/
