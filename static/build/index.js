@@ -1,10 +1,11 @@
-import group1 from './group1.js';
 import group2 from './group2.js';
+import group1 from './group1.js';
+import group3 from './group3.js';
 const shuffleTheArrayTest = () => arrayIsSame([2, 3, 5, 4, 1, 7], group1.ShuffleTheArray(3, [2, 5, 1, 3, 4, 7]));
 const kidsWithCandiesTest = () => group1.kidsWithCandies([2, 3, 5, 1, 3], 3).some((bool) => bool);
-const defangTest = () => "1[.]1[.]1[.]1" === group1.defang('1.1.1.1');
+const defangTest = () => '1[.]1[.]1[.]1' === group1.defang('1.1.1.1');
 const steps20Test = () => 4 === group1.steps20(8);
-const jewelsAndStonesTest = () => 3 === group1.jewelsAndStones("aA", "aAAbbbb");
+const jewelsAndStonesTest = () => 3 === group1.jewelsAndStones('aA', 'aAAbbbb');
 const numberSmallerThanGivenTest = () => arrayIsSame([4, 0, 1, 1, 3], group1.numberSmallerThanGiven([8, 1, 2, 2, 3]));
 const decompressRunLengthEncodedListTest = () => arrayIsSame([2, 4, 4, 4], group1.decompressRunLengthEncodedList([1, 2, 3, 4]));
 const subtractTheProductAndSumOfDigitsOfIntergerTest = () => 15 === group1.subtractTheProductAndSumOfDigitsOfInterger(234);
@@ -20,6 +21,18 @@ const maximumProductOfTwoElementsInArrayTest = () => 12 === group2.maximumProduc
 const binaryToIntTest = () => 5 === group2.binaryToInt([1, 0, 1]);
 const studentsDoingHomeworkAtAGivenTimeTest = () => 1 === group2.studentsDoingHomeworkAtAGivenTime([1, 2, 3], [3, 2, 7], 4);
 const minimumTimeVisitingAllPointsTest = () => 7 === group2.minimumTimeVisitingAllPoints([[1, 1], [3, 4], [-1, 0]]);
+const amountOfOddCellsTest = () => 6 === group3.amountOfOddCells(2, 3, [[0, 1], [1, 1]]);
+const amountOfUniqueMorseCodeTest = () => 2 === group3.amountOfUniqueMorseCode(['gin', 'zen', 'gig', 'msg']);
+const destCityTest = () => 'Sao Paulo' === group3.destCity([['London', 'New York'], ['New York', 'Lima'], ['Lima', 'Sao Paulo']]);
+const frequentAlphabetTest = () => 'jkab' === group3.frequentAlphabet('10#11#12');
+const makeArraysEqualTest = () => (group3.makeArraysEqual([1, 2, 3, 4], [2, 4, 1, 3])
+    &&
+        group3.makeArraysEqual([1, 2, 3, 4], [2, 4, 1, 5]) === false);
+const lowerCaseTest = () => 'hello' === group3.lowerCase('HeLlo');
+const maxNumberBySwitching6Or9Test = () => 9969 === group3.maxNumberBySwitching6Or9(9669);
+const numberOfNegNumbersTestTest = () => 3 === group3.numberOfNegNumbers([[1, -1], [4, -4, -7]]);
+const removeOuterMostParenthTest = () => '()()()' === group3.removeOuterMostParenth('(()())(())');
+const replaceNumsTest = () => arrayIsSame([18, 6, 6, 6, 1, -1], group3.replaceNums([17, 18, 5, 4, 6, 1]));
 const tests = [
     shuffleTheArrayTest, kidsWithCandiesTest,
     defangTest, steps20Test, jewelsAndStonesTest,
@@ -31,6 +44,10 @@ const tests = [
     rangeSumOfBstTest, maximumProductOfTwoElementsInArrayTest,
     binaryToIntTest, studentsDoingHomeworkAtAGivenTimeTest,
     minimumTimeVisitingAllPointsTest,
+    amountOfOddCellsTest, amountOfUniqueMorseCodeTest, destCityTest,
+    frequentAlphabetTest, makeArraysEqualTest, lowerCaseTest,
+    maxNumberBySwitching6Or9Test, numberOfNegNumbersTestTest,
+    removeOuterMostParenthTest, replaceNumsTest
 ];
 function runTests() {
     for (let i in tests) {
